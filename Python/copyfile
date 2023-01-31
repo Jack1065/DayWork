@@ -1,0 +1,7 @@
+import shutil
+#copyfile()
+#copy()
+#copy2()
+
+shutil.copyfile('test.txt', 'copy.txt')#src.dest
+

@@ -1,0 +1,14 @@
+import os
+import shutil
+try:
+    os.remove('range.txt') # Delete a file
+    #os.rmdir('range.txt') delete a empty directory
+    #shutil.rmtree(range)  delete a directory containing a file
+except FileNotFoundError:
+    print("file not found")
+except PermissionError:
+    print("Permission not accepted")
+except  OSError:
+    print("you cannot delete that using that function" )
+else:
+    print("Success")

@@ -1,0 +1,5 @@
+text = input("enter what you want here:")
+
+with open('test.txt', 'a') as file:
+    file.write(text)
+    
