@@ -3,4 +3,3 @@ try:
         print(file.read())
 except FileNotFoundError as e:
     print('file was not found')
-   

@@ -1,12 +1,12 @@
 package JavaHW;
 
 import java.util.InputMismatchException;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class Week1 {
     public static void main(String[] args) {
+        /* Program which prompts user for favorite video game and prints out the similarities 
+        between my favorite and their favorite game */
         Scanner input = new Scanner(System.in);
         String[] myFavorites = new String[]{"minecraft", "2009", "4.8", "Notch"};
         
@@ -21,10 +21,12 @@ public class Week1 {
         
         System.out.println("\nWhat year did your favorite game release?: ");
         System.out.print("Enter year: ");
+       
         String Yearparse = null;
         Yearparse = input.nextLine();
         int Year = 0;
 
+        //try catch block in order to catch an errors when parsing the year
         try{ 
             Year = Integer.parseInt(Yearparse);
         }
@@ -37,12 +39,11 @@ public class Week1 {
             System.exit(0);
             
         }
-
+        //Year validation
         if(Year<0 || Year>2023){
                 System.out.println("Invalid year, exiting program");
                 System.exit(0);
         }
-    
 
         System.out.println("\nWhat is the rating of your favorite game?: ");
         System.out.print("Enter rating: ");
@@ -56,7 +57,7 @@ public class Week1 {
             System.out.println("invalid rating, exiting program");
             System.exit(0);
         }
-
+        //rating validation
         if(rating>5.0 || rating<0.0){
                 System.out.println("Rating must be between 0.0 and 5.0, exiting program");
                 System.exit(0);
@@ -81,6 +82,7 @@ public class Week1 {
         }
 
         public static void checkForFavorites(String[] myFavorites, String gameName, String creator, int Year, float rating){
+            //conditionals checking similarities between myfavorite array and user input
             if(gameName.equalsIgnoreCase(myFavorites[0])){
                 System.out.println("Both of our favorite games are " + myFavorites[0]);
             }
